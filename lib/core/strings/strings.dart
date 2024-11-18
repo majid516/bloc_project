@@ -1,0 +1,1 @@
+const imageBaseUrl = 'http://localhost:4000/doctor/image/';
