@@ -1,5 +1,5 @@
 import 'package:bloc_project/core/colors/colors.dart';
-import 'package:bloc_project/features/doctors/presentation/doctor_profile_screen/widgets/about_doctor.dart';
+import 'package:bloc_project/core/styles/text_style.dart';
 import 'package:bloc_project/features/doctors/presentation/doctor_profile_screen/widgets/doctor_details.dart';
 import 'package:bloc_project/features/doctors/presentation/doctor_profile_screen/widgets/doctor_fee_bar.dart';
 import 'package:flutter/material.dart';
@@ -17,51 +17,26 @@ class DoctorProfileScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: Scaffold(
-        backgroundColor: whiteColor,
-        appBar: AppBar(
-          leading: IconButton(
-            icon: const Icon(
-              Icons.arrow_back_ios,
-              color: whiteColor,
-            ),
-            onPressed: () {},
-          ),
-          backgroundColor: appThemeColor,
-          actions: [
-            IconButton(
-              icon: const Icon(
-                Icons.star_border,
-                color: whiteColor,
-              ),
-              onPressed: () {},
-            ),
-            IconButton(
-              icon: const Icon(
-                Icons.share_outlined,
-                color: whiteColor,
-              ),
-              onPressed: () {},
-            ),
+    return Scaffold(
+      backgroundColor: whiteColor,
+      appBar: AppBar(
+      backgroundColor: appThemeColor,
+      title: const Text('Doctor', style: headingTextSyle),
+      iconTheme:const IconThemeData(
+        color: whiteColor,
+      ),
+    ),
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            DoctorDatails(name: name, experince: experince, qualification: qualification, fee: fee, hospital: hospital, profile: profile, category: category, id: id),
+         const  Divider(thickness: 15,color: greyColor,),
+            CunsultFeeBar(fee: fee,),
+         const  Divider(thickness: 15,color: greyColor,),
+          
           ],
         ),
-        body: SingleChildScrollView(
-          child: Column(
-            children: [
-              DoctorDatails(name: name, experince: experince, qualification: qualification, fee: fee, hospital: hospital, profile: profile, category: category, id: id),
-              Divider(
-                thickness: 8,
-                color: greyColor,
-              ),
-              CunsultFeeBar(fee: fee,),
-            
-              AboutDoctor()
-            ],
-          ),
-        ),
       ),
-      
     );
   }
 }

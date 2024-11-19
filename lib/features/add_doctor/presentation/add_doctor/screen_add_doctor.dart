@@ -30,71 +30,77 @@ class ScreenAddDoctor extends StatelessWidget {
           'Add Doctor',
           style: headingTextSyle,
         ),
+        iconTheme: const IconThemeData(color: whiteColor),
       ),
       body: SingleChildScrollView(
         child: Form(
           key: formKey,
-          child: Column(
-            children: [
-              InkWell(
-                child: Stack(
-                  children: [
-                    BlocBuilder<AddDoctorBloc, AddDoctorState>(
-                      builder: (context, state) {
-                        if (state is InitialState) {
-                          return CircleAvatar(
+          child: Padding(
+            padding: const EdgeInsets.only(top: 18.0),
+            child: Column(
+              children: [
+                InkWell(
+                  child: Stack(
+                    children: [
+                      BlocBuilder<AddDoctorBloc, AddDoctorState>(
+                        builder: (context, state) {
+                          if (state is InitialState) {
+                            return const CircleAvatar(
+                              radius: 70,
+                              backgroundImage: NetworkImage(
+                                  'https://cdn2.iconfinder.com/data/icons/user-people-4/48/5-512.png'),
+                            );
+                          } else if (state is AddLoadingState) {
+                            return const CircularProgressIndicator();
+                          } else if (state is AddLoadedState) {
+                            profile = state.profile;
+                            return CircleAvatar(
+                              radius: 70,
+                              backgroundImage: FileImage(File(state.profile)),
+                            );
+                          } else if (state is AddErrorState) {
+                            log('error while pick image');
+                            return const Icon(Icons.error);
+                          }
+                          return const CircleAvatar(
                             radius: 70,
                             backgroundImage: NetworkImage(
-                                'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRUFJ4m3HGM8397IWhGhLphaU38QtqrcYQoUg&s'),
+                                'https://cdn2.iconfinder.com/data/icons/user-people-4/48/5-512.png'),
                           );
-                        } else if (state is AddLoadingState) {
-                          return CircularProgressIndicator();
-                        } else if (state is AddLoadedState) {
-                          profile = state.profile;
-                          return CircleAvatar(
-                            radius: 70,
-                            backgroundImage: FileImage(File(state.profile)),
-                          );
-                        } else if (state is AddErrorState) {
-                          log('error while pick image');
-                          return const Icon(Icons.error);
-                        }
-                        return CircleAvatar(
-                          radius: 70,
-                          backgroundImage: NetworkImage(
-                              'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRUFJ4m3HGM8397IWhGhLphaU38QtqrcYQoUg&s'),
-                        );
-                      },
-                    ),
-                    Positioned(
-                      bottom: 10,
-                      right: 10,
-                      child: Icon(Icons.add_a_photo),
-                    )
-                  ],
+                        },
+                      ),
+                      const Positioned(
+                        bottom: 10,
+                        right: 10,
+                        child: Icon(Icons.add_a_photo),
+                      )
+                    ],
+                  ),
+                  onTap: () {
+                    BlocProvider.of<AddDoctorBloc>(context)
+                        .add(const PickImageFromGallery());
+                  },
                 ),
-                onTap: () {
-                  BlocProvider.of<AddDoctorBloc>(context)
-                      .add(PickImageFromGallery());
-                },
-              ),
-              buildTextField(
-                  nameController, 'doctor name', 'please enter doctor name'),
-              buildTextField(qualificationController, 'qualification',
-                  'please enter qualification'),
-              buildTextField(experienceController, 'experience',
-                  'please enter experience'),
-              buildTextField(feeController, 'fee', 'please enter doctor fee',
-                  isFee: true),
-              buildTextField(
-                  clinicController, 'clinic', 'please enter doctor clinic'),
-              buildTextField(
-                  categoryController, 'category', 'please enter category'),
-              // BlocListener<AddDoctorBloc, AddDoctorState>(
-              //   listener: (context, state) {
-              //     context.read<DoctorsBloc>().add(FechingDoctorDetails());
-              //   },
-              //   child: 
+                const SizedBox(
+                  height: 1,
+                ),
+                buildTextField(
+                    nameController, 'doctor name', 'please enter doctor name'),
+                buildTextField(qualificationController, 'qualification',
+                    'please enter qualification'),
+                buildTextField(experienceController, 'experience',
+                    'please enter experience'),
+                buildTextField(feeController, 'fee', 'please enter doctor fee',
+                    isFee: true),
+                buildTextField(
+                    clinicController, 'clinic', 'please enter doctor clinic'),
+                buildTextField(
+                    categoryController, 'category', 'please enter category'),
+
+                const SizedBox(
+                  height: 15,
+                ),
+
                 ElevatedButton(
                     onPressed: () {
                       if (formKey.currentState!.validate()) {
@@ -109,12 +115,20 @@ class ScreenAddDoctor extends StatelessWidget {
                         );
                         BlocProvider.of<DoctorsBloc>(context)
                             .add(SubmitDoctor(doctor));
-                            Navigator.pop(context);
+                        Navigator.pop(context);
                       }
                     },
-                    child: Text('submit')),
-              // )
-            ],
+                     style: ElevatedButton.styleFrom(backgroundColor: appThemeColor),
+              child: const 
+                  Text(
+                    'submit doctor',
+                    style: TextStyle(color: whiteColor),
+                  ),
+                
+            ),
+                // )
+              ],
+            ),
           ),
         ),
       ),

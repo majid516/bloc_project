@@ -18,14 +18,11 @@ class AddDoctorButton extends StatelessWidget {
               onPressed: () {
                 Navigator.of(context).push(
                   CupertinoPageRoute(
-                    builder: (ctx) => ScreenAddDoctor(
-                     
-                    ),
+                    builder: (ctx) => ScreenAddDoctor(),
                   ),
                 );
               },
-              style: ElevatedButton.styleFrom(
-                  backgroundColor: appThemeColor),
+              style: ElevatedButton.styleFrom(backgroundColor: appThemeColor),
               child: const Wrap(
                 children: [
                   Icon(
@@ -33,7 +30,7 @@ class AddDoctorButton extends StatelessWidget {
                     color: whiteColor,
                   ),
                   Text(
-                    'add student',
+                    'add doctor',
                     style: TextStyle(color: whiteColor),
                   ),
                 ],

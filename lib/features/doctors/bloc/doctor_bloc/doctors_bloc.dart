@@ -19,6 +19,7 @@ class DoctorsBloc extends Bloc<DoctorsEvent, DoctorsState> {
       emit(const DoctorsState.loadingState());
       try {
          final doctorsData = await DoctorRepository().getAllDoctors();
+         log(doctorsData[0].name);
          emit(DoctorsState.loadedState(doctors: doctorsData));
       } catch (e) {
         log(e.toString());
@@ -42,6 +43,7 @@ class DoctorsBloc extends Bloc<DoctorsEvent, DoctorsState> {
       try {
         await DoctorRepository().deleteDoctor(event.doctorId);
              emit(const DoctorsState.successState());
+             log('delete successfuly');
       } catch (e) {
          emit( DoctorsState.errorState(errorMsg: 'exception throwed while deleting $e'));
       }
