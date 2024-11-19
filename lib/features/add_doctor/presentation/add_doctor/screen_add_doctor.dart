@@ -51,9 +51,10 @@ class ScreenAddDoctor extends StatelessWidget {
           'Add Doctor',
           style: headingTextSyle,
         ),
-           shape:const RoundedRectangleBorder(
-          borderRadius: BorderRadius.only(bottomLeft: Radius.circular(15),bottomRight: Radius.circular(15))
-        ),
+        shape: const RoundedRectangleBorder(
+            borderRadius: BorderRadius.only(
+                bottomLeft: Radius.circular(15),
+                bottomRight: Radius.circular(15))),
         automaticallyImplyLeading: false,
       ),
       body: SingleChildScrollView(
@@ -67,58 +68,56 @@ class ScreenAddDoctor extends StatelessWidget {
                   child: Stack(
                     children: [
                       BlocBuilder<AddDoctorBloc, AddDoctorState>(
-  builder: (context, state) {
-    if (state is InitialState) {
-      return const CircleAvatar(
-        radius: 70,
-        backgroundImage: NetworkImage(
-            'https://cdn2.iconfinder.com/data/icons/user-people-4/48/5-512.png'),
-      );
-    } else if (state is AddLoadingState) {
-      return const CircularProgressIndicator();
-    } else if (state is AddLoadedState) {
-      profile = state.profile;
-      if (File(profile!).existsSync()) {
-        return CircleAvatar(
-          radius: 70,
-          foregroundImage: FileImage(File(profile!)),
-        );
-      } else {
-        log("Local file not found, using default image.");
-        return CircleAvatar(
-          radius: 70,
-          backgroundImage: NetworkImage(
-             '$imageBaseUrl${doctor?.profile}'),
-        );
-      }
-    } else if (state is AddErrorState) {
-      log('Error while picking image');
-      return const CircleAvatar(
-        radius: 70,
-        backgroundImage: NetworkImage(
-            'https://cdn2.iconfinder.com/data/icons/user-people-4/48/5-512.png'),
-      );
-    } else {
-      if (doctor != null ) {
-      
-        log('Using network image: $imageBaseUrl${doctor!.profile}');
-        return CircleAvatar(
-          radius: 70,
-          backgroundImage: NetworkImage("https://cdn2.iconfinder.com/data/icons/user-people-4/48/5-512.png"),
-        );
-      } else {
-        log('Using default image for edit mode');
-        return const CircleAvatar(
-          radius: 70,
-          backgroundImage: NetworkImage(
-              'https://cdn2.iconfinder.com/data/icons/user-people-4/48/5-512.png'),
-        );
-      }
-    }
-  },
-),
-
-                    
+                        builder: (context, state) {
+                          if (state is InitialState) {
+                            return const CircleAvatar(
+                              radius: 70,
+                              backgroundImage: NetworkImage(
+                                  'https://cdn2.iconfinder.com/data/icons/user-people-4/48/5-512.png'),
+                            );
+                          } else if (state is AddLoadingState) {
+                            return const CircularProgressIndicator();
+                          } else if (state is AddLoadedState) {
+                            profile = state.profile;
+                            if (File(profile!).existsSync()) {
+                              return CircleAvatar(
+                                radius: 70,
+                                foregroundImage: FileImage(File(profile!)),
+                              );
+                            } else {
+                              log("Local file not found, using default image.");
+                              return CircleAvatar(
+                                radius: 70,
+                                backgroundImage: NetworkImage(
+                                    '$imageBaseUrl${doctor?.profile}'),
+                              );
+                            }
+                          } else if (state is AddErrorState) {
+                            log('Error while picking image');
+                            return const CircleAvatar(
+                              radius: 70,
+                              backgroundImage: NetworkImage(
+                                  'https://cdn2.iconfinder.com/data/icons/user-people-4/48/5-512.png'),
+                            );
+                          } else {
+                            if (doctor != null) {
+                              log('Using network image: $imageBaseUrl${doctor!.profile}');
+                              return CircleAvatar(
+                                radius: 70,
+                                backgroundImage: NetworkImage(
+                                    "https://cdn2.iconfinder.com/data/icons/user-people-4/48/5-512.png"),
+                              );
+                            } else {
+                              log('Using default image for edit mode');
+                              return const CircleAvatar(
+                                radius: 70,
+                                backgroundImage: NetworkImage(
+                                    'https://cdn2.iconfinder.com/data/icons/user-people-4/48/5-512.png'),
+                              );
+                            }
+                          }
+                        },
+                      ),
                       const Positioned(
                         bottom: 10,
                         right: 10,
@@ -166,7 +165,7 @@ class ScreenAddDoctor extends StatelessWidget {
                         );
                         BlocProvider.of<DoctorsBloc>(context)
                             .add(SubmitDoctor(doctor));
-                            BlocProvider.of<AddDoctorBloc>(context)
+                        BlocProvider.of<AddDoctorBloc>(context)
                             .add(const ImageDispose());
                         Navigator.pop(context);
                       }
@@ -185,7 +184,7 @@ class ScreenAddDoctor extends StatelessWidget {
                         );
                         BlocProvider.of<DoctorsBloc>(context)
                             .add(UpdateDoctor(doctorData));
-                             BlocProvider.of<AddDoctorBloc>(context)
+                        BlocProvider.of<AddDoctorBloc>(context)
                             .add(const ImageDispose());
                         Navigator.pop(context);
                       }
