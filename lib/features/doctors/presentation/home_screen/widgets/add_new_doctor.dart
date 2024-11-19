@@ -18,7 +18,7 @@ class AddDoctorButton extends StatelessWidget {
               onPressed: () {
                 Navigator.of(context).push(
                   CupertinoPageRoute(
-                    builder: (ctx) => ScreenAddDoctor(),
+                    builder: (ctx) => ScreenAddDoctor(isAdd: true,),
                   ),
                 );
               },

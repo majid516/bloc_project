@@ -3,12 +3,14 @@ import 'package:bloc_project/core/colors/colors.dart';
 import 'package:bloc_project/core/screen_size/screen_size.dart';
 import 'package:bloc_project/core/strings/strings.dart';
 import 'package:bloc_project/core/styles/text_style.dart';
+import 'package:bloc_project/features/add_doctor/presentation/add_doctor/screen_add_doctor.dart';
 import 'package:bloc_project/features/doctors/bloc/doctor_bloc/doctors_bloc.dart';
 import 'package:bloc_project/features/doctors/cubit/delete_swipe/delete_swipe_cubit.dart';
 import 'package:bloc_project/features/doctors/cubit/delete_undo/delete_hide_item.dart';
 import 'package:bloc_project/features/doctors/cubit/delete_undo/delete_snacbar.dart';
 import 'package:bloc_project/features/doctors/presentation/doctor_profile_screen/screen_doctor_profile.dart';
 import 'package:bloc_project/features/doctors/presentation/home_screen/widgets/view_doctor_profile_button.dart';
+import 'package:bloc_project/infrastructure/models/doctor/doctor_model.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -67,7 +69,7 @@ class DoctorCard extends StatelessWidget {
                             width: ScreenSize.width,
                             height: ScreenSize.height * 0.2,
                             decoration: BoxDecoration(
-                              color: Colors.greenAccent,
+                              color: appThemeColor.withOpacity(0.5),
                               boxShadow: [
                                 BoxShadow(
                                   color: Colors.black.withOpacity(0.2),
@@ -78,32 +80,47 @@ class DoctorCard extends StatelessWidget {
                               ],
                             ),
                             child: Padding(
-                              padding: const EdgeInsets.only(right: 20.0),
+                              padding: const EdgeInsets.only(right: 25.0),
                               child: Row(
                                 mainAxisAlignment: MainAxisAlignment.end,
                                 children: [
-                                  IconButton(
-                                      onPressed: () async {
-                                        context
-                                            .read<DeleteSnacbarCubit>()
-                                            .isVisible();
-                                        BlocProvider.of<DeleteHideItemCubit>(
-                                                context)
-                                            .hideCard(id);
-
-                                        deleteSwipe.isSwipeClosed();
-                                        Debounce().undoDelay(() {
-                                          homeCtx
-                                              .read<DoctorsBloc>()
-                                              .add(DeleteDoctor(id));
-                                        });
-
-                                        log('await worked');
-                                      },
-                                      icon: const Icon(
-                                        Icons.delete,
-                                        size: 30,
-                                      )),
+                                  Padding(
+                                    padding: const EdgeInsets.symmetric(vertical: 20.0),
+                                    child: Column(
+                                      mainAxisAlignment: MainAxisAlignment.spaceAround,
+                                      children: [
+                                        IconButton(
+                                            onPressed: () async {
+                                              context
+                                                  .read<DeleteSnacbarCubit>()
+                                                  .isVisible();
+                                              BlocProvider.of<DeleteHideItemCubit>(
+                                                      context)
+                                                  .hideCard(id);
+                                        
+                                              deleteSwipe.isSwipeClosed();
+                                              Debounce().undoDelay(() {
+                                                homeCtx
+                                                    .read<DoctorsBloc>()
+                                                    .add(DeleteDoctor(id));
+                                              });
+                                        
+                                              log('await worked');
+                                            },
+                                            icon: const Icon(
+                                              Icons.delete,
+                                              size: 30,
+                                              color: blackColor,
+                                            )),
+                                            IconButton(onPressed: 
+                                            (){
+                                                final doctor = DoctorModel(id: id, name: name, experience: experince, qualification: qualification, fee: fee, profile: profile, category: category, hospital: hospital);
+                Navigator.of(context).push(CupertinoPageRoute(builder: (ctx) => ScreenAddDoctor(isAdd: false,doctor: doctor ,))); 
+            
+                                            }, icon:const Icon(Icons.edit_calendar_rounded,color: blackColor,))
+                                      ],
+                                    ),
+                                  ),
                                 ],
                               ),
                             ),

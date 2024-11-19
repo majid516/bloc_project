@@ -19,32 +19,44 @@ mixin _$AddDoctorEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() pickImageFromGallery,
+    required TResult Function(String imagePath) setImage,
+    required TResult Function() imageDispose,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? pickImageFromGallery,
+    TResult? Function(String imagePath)? setImage,
+    TResult? Function()? imageDispose,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? pickImageFromGallery,
+    TResult Function(String imagePath)? setImage,
+    TResult Function()? imageDispose,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(PickImageFromGallery value) pickImageFromGallery,
+    required TResult Function(SetImage value) setImage,
+    required TResult Function(ImageDispose value) imageDispose,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(PickImageFromGallery value)? pickImageFromGallery,
+    TResult? Function(SetImage value)? setImage,
+    TResult? Function(ImageDispose value)? imageDispose,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(PickImageFromGallery value)? pickImageFromGallery,
+    TResult Function(SetImage value)? setImage,
+    TResult Function(ImageDispose value)? imageDispose,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -114,6 +126,8 @@ class _$PickImageFromGalleryImpl implements PickImageFromGallery {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() pickImageFromGallery,
+    required TResult Function(String imagePath) setImage,
+    required TResult Function() imageDispose,
   }) {
     return pickImageFromGallery();
   }
@@ -122,6 +136,8 @@ class _$PickImageFromGalleryImpl implements PickImageFromGallery {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? pickImageFromGallery,
+    TResult? Function(String imagePath)? setImage,
+    TResult? Function()? imageDispose,
   }) {
     return pickImageFromGallery?.call();
   }
@@ -130,6 +146,8 @@ class _$PickImageFromGalleryImpl implements PickImageFromGallery {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? pickImageFromGallery,
+    TResult Function(String imagePath)? setImage,
+    TResult Function()? imageDispose,
     required TResult orElse(),
   }) {
     if (pickImageFromGallery != null) {
@@ -142,6 +160,8 @@ class _$PickImageFromGalleryImpl implements PickImageFromGallery {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(PickImageFromGallery value) pickImageFromGallery,
+    required TResult Function(SetImage value) setImage,
+    required TResult Function(ImageDispose value) imageDispose,
   }) {
     return pickImageFromGallery(this);
   }
@@ -150,6 +170,8 @@ class _$PickImageFromGalleryImpl implements PickImageFromGallery {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(PickImageFromGallery value)? pickImageFromGallery,
+    TResult? Function(SetImage value)? setImage,
+    TResult? Function(ImageDispose value)? imageDispose,
   }) {
     return pickImageFromGallery?.call(this);
   }
@@ -158,6 +180,8 @@ class _$PickImageFromGalleryImpl implements PickImageFromGallery {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(PickImageFromGallery value)? pickImageFromGallery,
+    TResult Function(SetImage value)? setImage,
+    TResult Function(ImageDispose value)? imageDispose,
     required TResult orElse(),
   }) {
     if (pickImageFromGallery != null) {
@@ -169,6 +193,264 @@ class _$PickImageFromGalleryImpl implements PickImageFromGallery {
 
 abstract class PickImageFromGallery implements AddDoctorEvent {
   const factory PickImageFromGallery() = _$PickImageFromGalleryImpl;
+}
+
+/// @nodoc
+abstract class _$$SetImageImplCopyWith<$Res> {
+  factory _$$SetImageImplCopyWith(
+          _$SetImageImpl value, $Res Function(_$SetImageImpl) then) =
+      __$$SetImageImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({String imagePath});
+}
+
+/// @nodoc
+class __$$SetImageImplCopyWithImpl<$Res>
+    extends _$AddDoctorEventCopyWithImpl<$Res, _$SetImageImpl>
+    implements _$$SetImageImplCopyWith<$Res> {
+  __$$SetImageImplCopyWithImpl(
+      _$SetImageImpl _value, $Res Function(_$SetImageImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of AddDoctorEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? imagePath = null,
+  }) {
+    return _then(_$SetImageImpl(
+      null == imagePath
+          ? _value.imagePath
+          : imagePath // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$SetImageImpl implements SetImage {
+  const _$SetImageImpl(this.imagePath);
+
+  @override
+  final String imagePath;
+
+  @override
+  String toString() {
+    return 'AddDoctorEvent.setImage(imagePath: $imagePath)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$SetImageImpl &&
+            (identical(other.imagePath, imagePath) ||
+                other.imagePath == imagePath));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, imagePath);
+
+  /// Create a copy of AddDoctorEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$SetImageImplCopyWith<_$SetImageImpl> get copyWith =>
+      __$$SetImageImplCopyWithImpl<_$SetImageImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() pickImageFromGallery,
+    required TResult Function(String imagePath) setImage,
+    required TResult Function() imageDispose,
+  }) {
+    return setImage(imagePath);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? pickImageFromGallery,
+    TResult? Function(String imagePath)? setImage,
+    TResult? Function()? imageDispose,
+  }) {
+    return setImage?.call(imagePath);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? pickImageFromGallery,
+    TResult Function(String imagePath)? setImage,
+    TResult Function()? imageDispose,
+    required TResult orElse(),
+  }) {
+    if (setImage != null) {
+      return setImage(imagePath);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(PickImageFromGallery value) pickImageFromGallery,
+    required TResult Function(SetImage value) setImage,
+    required TResult Function(ImageDispose value) imageDispose,
+  }) {
+    return setImage(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(PickImageFromGallery value)? pickImageFromGallery,
+    TResult? Function(SetImage value)? setImage,
+    TResult? Function(ImageDispose value)? imageDispose,
+  }) {
+    return setImage?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(PickImageFromGallery value)? pickImageFromGallery,
+    TResult Function(SetImage value)? setImage,
+    TResult Function(ImageDispose value)? imageDispose,
+    required TResult orElse(),
+  }) {
+    if (setImage != null) {
+      return setImage(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class SetImage implements AddDoctorEvent {
+  const factory SetImage(final String imagePath) = _$SetImageImpl;
+
+  String get imagePath;
+
+  /// Create a copy of AddDoctorEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$SetImageImplCopyWith<_$SetImageImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$ImageDisposeImplCopyWith<$Res> {
+  factory _$$ImageDisposeImplCopyWith(
+          _$ImageDisposeImpl value, $Res Function(_$ImageDisposeImpl) then) =
+      __$$ImageDisposeImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$ImageDisposeImplCopyWithImpl<$Res>
+    extends _$AddDoctorEventCopyWithImpl<$Res, _$ImageDisposeImpl>
+    implements _$$ImageDisposeImplCopyWith<$Res> {
+  __$$ImageDisposeImplCopyWithImpl(
+      _$ImageDisposeImpl _value, $Res Function(_$ImageDisposeImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of AddDoctorEvent
+  /// with the given fields replaced by the non-null parameter values.
+}
+
+/// @nodoc
+
+class _$ImageDisposeImpl implements ImageDispose {
+  const _$ImageDisposeImpl();
+
+  @override
+  String toString() {
+    return 'AddDoctorEvent.imageDispose()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$ImageDisposeImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() pickImageFromGallery,
+    required TResult Function(String imagePath) setImage,
+    required TResult Function() imageDispose,
+  }) {
+    return imageDispose();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? pickImageFromGallery,
+    TResult? Function(String imagePath)? setImage,
+    TResult? Function()? imageDispose,
+  }) {
+    return imageDispose?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? pickImageFromGallery,
+    TResult Function(String imagePath)? setImage,
+    TResult Function()? imageDispose,
+    required TResult orElse(),
+  }) {
+    if (imageDispose != null) {
+      return imageDispose();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(PickImageFromGallery value) pickImageFromGallery,
+    required TResult Function(SetImage value) setImage,
+    required TResult Function(ImageDispose value) imageDispose,
+  }) {
+    return imageDispose(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(PickImageFromGallery value)? pickImageFromGallery,
+    TResult? Function(SetImage value)? setImage,
+    TResult? Function(ImageDispose value)? imageDispose,
+  }) {
+    return imageDispose?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(PickImageFromGallery value)? pickImageFromGallery,
+    TResult Function(SetImage value)? setImage,
+    TResult Function(ImageDispose value)? imageDispose,
+    required TResult orElse(),
+  }) {
+    if (imageDispose != null) {
+      return imageDispose(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class ImageDispose implements AddDoctorEvent {
+  const factory ImageDispose() = _$ImageDisposeImpl;
 }
 
 /// @nodoc

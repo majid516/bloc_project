@@ -12,7 +12,7 @@ part 'doctors_state.dart';
 part 'doctors_bloc.freezed.dart';
 
 class DoctorsBloc extends Bloc<DoctorsEvent, DoctorsState> {
-    final AddDoctorRepository doctorRepository;
+    final AddUpdateDoctorRepository doctorRepository;
 
   DoctorsBloc(this.doctorRepository) : super(const InitialState()) {
     on<FechingDoctorDetails>((event, emit)async {
@@ -48,5 +48,16 @@ class DoctorsBloc extends Bloc<DoctorsEvent, DoctorsState> {
          emit( DoctorsState.errorState(errorMsg: 'exception throwed while deleting $e'));
       }
    });
+    on<UpdateDoctor>((event,emit)async{
+      emit(const DoctorsState.loadingState());
+     try {
+       await AddUpdateDoctorRepository().updateDoctor(event.doctor);
+       emit(const DoctorsState.successState());
+       log('update successfully');
+     } catch (e) {
+       emit(const DoctorsState.errorState(errorMsg: 'exception throwed while updating'));
+     }
+   });
   }
+  
 }

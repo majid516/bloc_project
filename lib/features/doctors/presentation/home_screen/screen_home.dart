@@ -20,6 +20,9 @@ class ScreenHome extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: appThemeColor,
         title: const Text('Bloc App', style: headingTextSyle),
+        shape:const RoundedRectangleBorder(
+          borderRadius: BorderRadius.only(bottomLeft: Radius.circular(15),bottomRight: Radius.circular(15))
+        ),
       ),
       body: Stack(
         alignment: Alignment.bottomCenter,

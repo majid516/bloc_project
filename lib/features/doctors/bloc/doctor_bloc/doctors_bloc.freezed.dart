@@ -21,6 +21,7 @@ mixin _$DoctorsEvent {
     required TResult Function() fechingDoctorDetails,
     required TResult Function(DoctorModel doctor) submitDoctor,
     required TResult Function(String doctorId) deleteDoctor,
+    required TResult Function(DoctorModel doctor) updateDoctor,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -28,6 +29,7 @@ mixin _$DoctorsEvent {
     TResult? Function()? fechingDoctorDetails,
     TResult? Function(DoctorModel doctor)? submitDoctor,
     TResult? Function(String doctorId)? deleteDoctor,
+    TResult? Function(DoctorModel doctor)? updateDoctor,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -35,6 +37,7 @@ mixin _$DoctorsEvent {
     TResult Function()? fechingDoctorDetails,
     TResult Function(DoctorModel doctor)? submitDoctor,
     TResult Function(String doctorId)? deleteDoctor,
+    TResult Function(DoctorModel doctor)? updateDoctor,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -43,6 +46,7 @@ mixin _$DoctorsEvent {
     required TResult Function(FechingDoctorDetails value) fechingDoctorDetails,
     required TResult Function(SubmitDoctor value) submitDoctor,
     required TResult Function(DeleteDoctor value) deleteDoctor,
+    required TResult Function(UpdateDoctor value) updateDoctor,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -50,6 +54,7 @@ mixin _$DoctorsEvent {
     TResult? Function(FechingDoctorDetails value)? fechingDoctorDetails,
     TResult? Function(SubmitDoctor value)? submitDoctor,
     TResult? Function(DeleteDoctor value)? deleteDoctor,
+    TResult? Function(UpdateDoctor value)? updateDoctor,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -57,6 +62,7 @@ mixin _$DoctorsEvent {
     TResult Function(FechingDoctorDetails value)? fechingDoctorDetails,
     TResult Function(SubmitDoctor value)? submitDoctor,
     TResult Function(DeleteDoctor value)? deleteDoctor,
+    TResult Function(UpdateDoctor value)? updateDoctor,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -128,6 +134,7 @@ class _$FechingDoctorDetailsImpl implements FechingDoctorDetails {
     required TResult Function() fechingDoctorDetails,
     required TResult Function(DoctorModel doctor) submitDoctor,
     required TResult Function(String doctorId) deleteDoctor,
+    required TResult Function(DoctorModel doctor) updateDoctor,
   }) {
     return fechingDoctorDetails();
   }
@@ -138,6 +145,7 @@ class _$FechingDoctorDetailsImpl implements FechingDoctorDetails {
     TResult? Function()? fechingDoctorDetails,
     TResult? Function(DoctorModel doctor)? submitDoctor,
     TResult? Function(String doctorId)? deleteDoctor,
+    TResult? Function(DoctorModel doctor)? updateDoctor,
   }) {
     return fechingDoctorDetails?.call();
   }
@@ -148,6 +156,7 @@ class _$FechingDoctorDetailsImpl implements FechingDoctorDetails {
     TResult Function()? fechingDoctorDetails,
     TResult Function(DoctorModel doctor)? submitDoctor,
     TResult Function(String doctorId)? deleteDoctor,
+    TResult Function(DoctorModel doctor)? updateDoctor,
     required TResult orElse(),
   }) {
     if (fechingDoctorDetails != null) {
@@ -162,6 +171,7 @@ class _$FechingDoctorDetailsImpl implements FechingDoctorDetails {
     required TResult Function(FechingDoctorDetails value) fechingDoctorDetails,
     required TResult Function(SubmitDoctor value) submitDoctor,
     required TResult Function(DeleteDoctor value) deleteDoctor,
+    required TResult Function(UpdateDoctor value) updateDoctor,
   }) {
     return fechingDoctorDetails(this);
   }
@@ -172,6 +182,7 @@ class _$FechingDoctorDetailsImpl implements FechingDoctorDetails {
     TResult? Function(FechingDoctorDetails value)? fechingDoctorDetails,
     TResult? Function(SubmitDoctor value)? submitDoctor,
     TResult? Function(DeleteDoctor value)? deleteDoctor,
+    TResult? Function(UpdateDoctor value)? updateDoctor,
   }) {
     return fechingDoctorDetails?.call(this);
   }
@@ -182,6 +193,7 @@ class _$FechingDoctorDetailsImpl implements FechingDoctorDetails {
     TResult Function(FechingDoctorDetails value)? fechingDoctorDetails,
     TResult Function(SubmitDoctor value)? submitDoctor,
     TResult Function(DeleteDoctor value)? deleteDoctor,
+    TResult Function(UpdateDoctor value)? updateDoctor,
     required TResult orElse(),
   }) {
     if (fechingDoctorDetails != null) {
@@ -266,6 +278,7 @@ class _$SubmitDoctorImpl implements SubmitDoctor {
     required TResult Function() fechingDoctorDetails,
     required TResult Function(DoctorModel doctor) submitDoctor,
     required TResult Function(String doctorId) deleteDoctor,
+    required TResult Function(DoctorModel doctor) updateDoctor,
   }) {
     return submitDoctor(doctor);
   }
@@ -276,6 +289,7 @@ class _$SubmitDoctorImpl implements SubmitDoctor {
     TResult? Function()? fechingDoctorDetails,
     TResult? Function(DoctorModel doctor)? submitDoctor,
     TResult? Function(String doctorId)? deleteDoctor,
+    TResult? Function(DoctorModel doctor)? updateDoctor,
   }) {
     return submitDoctor?.call(doctor);
   }
@@ -286,6 +300,7 @@ class _$SubmitDoctorImpl implements SubmitDoctor {
     TResult Function()? fechingDoctorDetails,
     TResult Function(DoctorModel doctor)? submitDoctor,
     TResult Function(String doctorId)? deleteDoctor,
+    TResult Function(DoctorModel doctor)? updateDoctor,
     required TResult orElse(),
   }) {
     if (submitDoctor != null) {
@@ -300,6 +315,7 @@ class _$SubmitDoctorImpl implements SubmitDoctor {
     required TResult Function(FechingDoctorDetails value) fechingDoctorDetails,
     required TResult Function(SubmitDoctor value) submitDoctor,
     required TResult Function(DeleteDoctor value) deleteDoctor,
+    required TResult Function(UpdateDoctor value) updateDoctor,
   }) {
     return submitDoctor(this);
   }
@@ -310,6 +326,7 @@ class _$SubmitDoctorImpl implements SubmitDoctor {
     TResult? Function(FechingDoctorDetails value)? fechingDoctorDetails,
     TResult? Function(SubmitDoctor value)? submitDoctor,
     TResult? Function(DeleteDoctor value)? deleteDoctor,
+    TResult? Function(UpdateDoctor value)? updateDoctor,
   }) {
     return submitDoctor?.call(this);
   }
@@ -320,6 +337,7 @@ class _$SubmitDoctorImpl implements SubmitDoctor {
     TResult Function(FechingDoctorDetails value)? fechingDoctorDetails,
     TResult Function(SubmitDoctor value)? submitDoctor,
     TResult Function(DeleteDoctor value)? deleteDoctor,
+    TResult Function(UpdateDoctor value)? updateDoctor,
     required TResult orElse(),
   }) {
     if (submitDoctor != null) {
@@ -413,6 +431,7 @@ class _$DeleteDoctorImpl implements DeleteDoctor {
     required TResult Function() fechingDoctorDetails,
     required TResult Function(DoctorModel doctor) submitDoctor,
     required TResult Function(String doctorId) deleteDoctor,
+    required TResult Function(DoctorModel doctor) updateDoctor,
   }) {
     return deleteDoctor(doctorId);
   }
@@ -423,6 +442,7 @@ class _$DeleteDoctorImpl implements DeleteDoctor {
     TResult? Function()? fechingDoctorDetails,
     TResult? Function(DoctorModel doctor)? submitDoctor,
     TResult? Function(String doctorId)? deleteDoctor,
+    TResult? Function(DoctorModel doctor)? updateDoctor,
   }) {
     return deleteDoctor?.call(doctorId);
   }
@@ -433,6 +453,7 @@ class _$DeleteDoctorImpl implements DeleteDoctor {
     TResult Function()? fechingDoctorDetails,
     TResult Function(DoctorModel doctor)? submitDoctor,
     TResult Function(String doctorId)? deleteDoctor,
+    TResult Function(DoctorModel doctor)? updateDoctor,
     required TResult orElse(),
   }) {
     if (deleteDoctor != null) {
@@ -447,6 +468,7 @@ class _$DeleteDoctorImpl implements DeleteDoctor {
     required TResult Function(FechingDoctorDetails value) fechingDoctorDetails,
     required TResult Function(SubmitDoctor value) submitDoctor,
     required TResult Function(DeleteDoctor value) deleteDoctor,
+    required TResult Function(UpdateDoctor value) updateDoctor,
   }) {
     return deleteDoctor(this);
   }
@@ -457,6 +479,7 @@ class _$DeleteDoctorImpl implements DeleteDoctor {
     TResult? Function(FechingDoctorDetails value)? fechingDoctorDetails,
     TResult? Function(SubmitDoctor value)? submitDoctor,
     TResult? Function(DeleteDoctor value)? deleteDoctor,
+    TResult? Function(UpdateDoctor value)? updateDoctor,
   }) {
     return deleteDoctor?.call(this);
   }
@@ -467,6 +490,7 @@ class _$DeleteDoctorImpl implements DeleteDoctor {
     TResult Function(FechingDoctorDetails value)? fechingDoctorDetails,
     TResult Function(SubmitDoctor value)? submitDoctor,
     TResult Function(DeleteDoctor value)? deleteDoctor,
+    TResult Function(UpdateDoctor value)? updateDoctor,
     required TResult orElse(),
   }) {
     if (deleteDoctor != null) {
@@ -485,6 +509,158 @@ abstract class DeleteDoctor implements DoctorsEvent {
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
   _$$DeleteDoctorImplCopyWith<_$DeleteDoctorImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$UpdateDoctorImplCopyWith<$Res> {
+  factory _$$UpdateDoctorImplCopyWith(
+          _$UpdateDoctorImpl value, $Res Function(_$UpdateDoctorImpl) then) =
+      __$$UpdateDoctorImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({DoctorModel doctor});
+}
+
+/// @nodoc
+class __$$UpdateDoctorImplCopyWithImpl<$Res>
+    extends _$DoctorsEventCopyWithImpl<$Res, _$UpdateDoctorImpl>
+    implements _$$UpdateDoctorImplCopyWith<$Res> {
+  __$$UpdateDoctorImplCopyWithImpl(
+      _$UpdateDoctorImpl _value, $Res Function(_$UpdateDoctorImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of DoctorsEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? doctor = null,
+  }) {
+    return _then(_$UpdateDoctorImpl(
+      null == doctor
+          ? _value.doctor
+          : doctor // ignore: cast_nullable_to_non_nullable
+              as DoctorModel,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$UpdateDoctorImpl implements UpdateDoctor {
+  const _$UpdateDoctorImpl(this.doctor);
+
+  @override
+  final DoctorModel doctor;
+
+  @override
+  String toString() {
+    return 'DoctorsEvent.updateDoctor(doctor: $doctor)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$UpdateDoctorImpl &&
+            (identical(other.doctor, doctor) || other.doctor == doctor));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, doctor);
+
+  /// Create a copy of DoctorsEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$UpdateDoctorImplCopyWith<_$UpdateDoctorImpl> get copyWith =>
+      __$$UpdateDoctorImplCopyWithImpl<_$UpdateDoctorImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() fechingDoctorDetails,
+    required TResult Function(DoctorModel doctor) submitDoctor,
+    required TResult Function(String doctorId) deleteDoctor,
+    required TResult Function(DoctorModel doctor) updateDoctor,
+  }) {
+    return updateDoctor(doctor);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? fechingDoctorDetails,
+    TResult? Function(DoctorModel doctor)? submitDoctor,
+    TResult? Function(String doctorId)? deleteDoctor,
+    TResult? Function(DoctorModel doctor)? updateDoctor,
+  }) {
+    return updateDoctor?.call(doctor);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? fechingDoctorDetails,
+    TResult Function(DoctorModel doctor)? submitDoctor,
+    TResult Function(String doctorId)? deleteDoctor,
+    TResult Function(DoctorModel doctor)? updateDoctor,
+    required TResult orElse(),
+  }) {
+    if (updateDoctor != null) {
+      return updateDoctor(doctor);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(FechingDoctorDetails value) fechingDoctorDetails,
+    required TResult Function(SubmitDoctor value) submitDoctor,
+    required TResult Function(DeleteDoctor value) deleteDoctor,
+    required TResult Function(UpdateDoctor value) updateDoctor,
+  }) {
+    return updateDoctor(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(FechingDoctorDetails value)? fechingDoctorDetails,
+    TResult? Function(SubmitDoctor value)? submitDoctor,
+    TResult? Function(DeleteDoctor value)? deleteDoctor,
+    TResult? Function(UpdateDoctor value)? updateDoctor,
+  }) {
+    return updateDoctor?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(FechingDoctorDetails value)? fechingDoctorDetails,
+    TResult Function(SubmitDoctor value)? submitDoctor,
+    TResult Function(DeleteDoctor value)? deleteDoctor,
+    TResult Function(UpdateDoctor value)? updateDoctor,
+    required TResult orElse(),
+  }) {
+    if (updateDoctor != null) {
+      return updateDoctor(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class UpdateDoctor implements DoctorsEvent {
+  const factory UpdateDoctor(final DoctorModel doctor) = _$UpdateDoctorImpl;
+
+  DoctorModel get doctor;
+
+  /// Create a copy of DoctorsEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$UpdateDoctorImplCopyWith<_$UpdateDoctorImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 

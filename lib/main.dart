@@ -20,7 +20,7 @@ class MainApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     ScreenSize.initialize(context);
-        final doctorRepository = AddDoctorRepository(); 
+        final doctorRepository = AddUpdateDoctorRepository(); 
     return MultiBlocProvider(
       providers: [
         BlocProvider(create: (context)=> AddDoctorBloc()),

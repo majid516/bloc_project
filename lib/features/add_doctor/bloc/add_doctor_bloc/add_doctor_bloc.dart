@@ -23,6 +23,16 @@ class AddDoctorBloc extends Bloc<AddDoctorEvent, AddDoctorState> {
        emit(const AddDoctorState.addErrorState(errorMsg: 'exception while picking image'));
       }
     });
-   
+    on<SetImage>((event, emit)async {
+     try{
+      emit(AddDoctorState.addLoadedState(profile: event.imagePath));
+     }catch(e){
+      emit(AddDoctorState.addErrorState(errorMsg: 'error while pick image'));
+     }
+
+    });
+     on<ImageDispose>((event, emit)async {
+      emit(const AddDoctorState.addinitialState());
+    });
   }
 }

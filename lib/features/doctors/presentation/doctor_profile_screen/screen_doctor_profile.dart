@@ -1,7 +1,10 @@
 import 'package:bloc_project/core/colors/colors.dart';
 import 'package:bloc_project/core/styles/text_style.dart';
+import 'package:bloc_project/features/add_doctor/presentation/add_doctor/screen_add_doctor.dart';
 import 'package:bloc_project/features/doctors/presentation/doctor_profile_screen/widgets/doctor_details.dart';
 import 'package:bloc_project/features/doctors/presentation/doctor_profile_screen/widgets/doctor_fee_bar.dart';
+import 'package:bloc_project/infrastructure/models/doctor/doctor_model.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class DoctorProfileScreen extends StatelessWidget {
@@ -25,6 +28,9 @@ class DoctorProfileScreen extends StatelessWidget {
       iconTheme:const IconThemeData(
         color: whiteColor,
       ),
+         shape:const RoundedRectangleBorder(
+          borderRadius: BorderRadius.only(bottomLeft: Radius.circular(15),bottomRight: Radius.circular(15))
+        ),
     ),
       body: SingleChildScrollView(
         child: Column(
